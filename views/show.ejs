@@ -1,0 +1,129 @@
+<%- include('./partials/header.ejs') %>
+
+
+
+
+
+
+
+<div class="card mb-3 mt-4">
+    <div class="row g-0">
+        <div class="col-lg-4 d-flex align-items-center">
+           
+        </div>
+        <div class="col-lg-4 ">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <%= job.name %>
+
+                    <p class="card-text "><small class="text-muted">
+                        <div class=" mb-5 mr-5" >
+                            <div id='map'style='width: 30%; height: 30px;' class="mb-3"></div>
+                            <img style="width: 100%; height: auto;" src="<%= job.image %>" class="img-fluid rounded-start my-auto " alt="...">
+                            <ul  class="list-group text-left" id="stick-it1">
+                              <li class="list-group-item" id="dmode2"><%= job.address%></li>
+                              <li class="list-group-item" id="dmode2">Posted by: <%= job.package%></li>
+                              <li class="list-group-item" id="dmode2"> Jobtype :<%= job.type%></li>
+                              <li class="list-group-item" id="dmode2">Cgpa :<%= job.cgpa%></li>
+                           </ul>
+                           </div>
+                           <div>
+                        
+                        
+                        
+                        
+                        
+                       
+                </small></p>
+                </h4>
+            </div>
+            </div>
+        </div>
+        
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="btn-group mx-40" role="group" aria-label="Basic example">
+    <a href="/jobs/<%= job._id %>/apply" class="btn btn-info">apply</a>
+    <a href="/jobs/<%= job._id %>/test" class="btn btn-info">Test</a>
+    <% if (currentUser && currentUser.isAdmin) { %>
+
+        <a class="btn btn-warning" href="/jobs/<%= job._id %>/edit">edit</a>
+    
+        <form action="/jobs/<%= job._id %>?_method=DELETE" method="post">
+            <input class="btn btn-danger" type="submit" value="delete">
+        </form>
+        <% } %>
+  </div>
+      
+  
+
+
+
+
+<% if (currentUser && currentUser.isAdmin) { %>
+<h1>list of students that have applied</h1>
+<% for( let student of job.appliedUsers) { %>
+<div><%= student.username %></div>
+<% } %>
+<% } %>
+
+<%- include('./partials/footer.ejs') %>
+<link rel="stylesheet" href="/show.css">
+
+
+
+
+
+
+
+
+<section style="padding-top: 30px; padding-bottom: 50px;" class="text-decoration-none home-text clearfix bg-dark">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-3 col-sm-3 px-4">
+                <div class="footer-widget">
+                    <h3 class="text-uppercase">About Us</h3>
+                    <p class="footer-text fs-6 lead mt-3">
+                        HireHub is a leading job portal platform that brings a lot of benefits to both job providers and job finders!
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-3 px-4">
+                <div class="footer-widget">
+                    <h3 class="text-uppercase">Contact Info</h3>
+                    <p class="footer-text fs-6 lead mt-3">Address :HireHub Main Office, New Delhi, India</p>
+                    <p class="footer-text fs-6 lead mt-3">Phone : +91 9999888877</p>
+                    <p class="footer-text fs-6 lead mt-3">Email : info@hirehub.com</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-3 px-4">
+                <div class="footer-widget social-widget">
+                    <h3 class="text-uppercase mb-3">Important Links</h3>
+                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+                        <li><a class="footer-link fs-6 lead text-decoration-none home-text" href="#"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+                        <li class="mt-2"><a class="footer-link fs-6 lead text-decoration-none home-text" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li class="mt-2"><a class="footer-link fs-6 lead text-decoration-none home-text" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li class="mt-2"><a class="footer-link fs-6 lead text-decoration-none home-text" href="#"><i class="fab fa-youtube"></i> youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-3 px-4">
+                <div class="footer-widget news-letter">
+                    <h3 class="text-uppercase">Job Portal</h3>
+                    <p class="footer-text fs-6 lead mt-3">View job listings from world's leading recruitment companies</p>
+                    <form action="/jobs" method="GET">
+                        <input type="text" class="footer-text form-control mb-3" placeholder="Job/Company Name">
+                        <button type="submit" class="btn btn-danger">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

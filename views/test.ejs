@@ -1,0 +1,85 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="show-page">
+	<div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="cv-caption text-center">
+                        <p class="pera2 mt-5">Test Questions for Job: <br> <%= job.name %></p>
+                        <a href="/jobs/<%=job._id%>" class="home-text text-decoration-none border-btn2 border-btn4">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<div class="container mt-3">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+            <div class="text-center lead fs-1">List of Questions</div>
+
+            <% if (currentUser && currentUser.isAdmin) { %>
+
+                <p class="text-center mt-3">
+                    <a href="/jobs/<%=job._id%>/questions" class="btn btn-outline-primary">Add a New Question</a>
+                </p>
+    
+
+
+                <% } %>
+           
+            <div class="show-question py-3">
+                <form action="/jobs/<%= job._id %>/test" method="post">
+                
+                <% for(let i in job.questions) { %>
+                    <div class="mt-5">
+                        
+                        Question:   <%= job.questions[i].description %>
+                    </div>
+                    <div class="form-check">
+                        <input required class="form-check-input" type="radio" name="answers[<%= i %>]" id="option1"
+                            value="option1">
+                        <label class="form-check-label" for="option1">
+                            <%= job.questions[i].option1 %>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answers[<%= i %>]" id="option2" value="option2">
+                        <label class="form-check-label" for="option2">
+                            <%= job.questions[i].option2 %>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answers[<%= i %>]" id="option3" value="option3">
+                        <label class="form-check-label" for="option3">
+                            <%= job.questions[i].option3 %>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="answers[<%= i %>]" id="option4" value="option4">
+                        <label class="form-check-label" for="option4">
+                            <%= job.questions[i].option4 %>
+                        </label>
+                    </div>
+                    <% } %>
+
+            </div>
+            <div>
+                <input class="btn btn-primary mt-5 mx-auto" type="submit" value="End Test ">
+            </div>
+           </div>
+           </div>
+        </form>
+        
+            
+    </div>
+</div>
+</div>
+
+
+<%- include('./partials/footer.ejs') %>

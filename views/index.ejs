@@ -1,0 +1,106 @@
+<%- include('./partials/header.ejs') %>
+
+
+
+
+
+
+<link rel="stylesheet" href="/index.css">
+
+<div class=" d-flex justify-content-center  my-10 mt-5">
+    <form action="/jobs" method="get">
+    <input type="text" name="search">
+    <input type="submit" value="search">
+</form>
+</div>
+
+<h1 class="hover-border text-center mt-2">ALL JOBS</h1><hr>
+<div class="new text-center">
+  <a class=" btn btn-link "  href="jobs/new">Add new job</a>
+</div>
+
+
+   
+
+<ul id="myUl">
+  <div class=" row mb-3  ">
+    <% for (let job of foundJobs) {  %> 
+      
+        <div class="card-container col-md-4 col-sm-4 mb-5 mr-3 mx-auto">
+        <div class="inside" >
+            <div class="card">
+                <img src="<%= job.image %>" class="card-img-top" style='height: 100px;' alt="...">
+              </div>
+      </div>
+      <div class="card mb-3" id="stick-it1">
+        <div class="card-body">
+            <h5 class="card-title" ><%= job.name%></h5>
+            <div class="col-4">
+                <a class="btn btn-primary m-left" href="/jobs/<%= job._id %>">View </a>
+              </div>
+        </div>
+        
+          
+        
+      
+        
+      </figure>
+    </div>
+    </div>
+    <% }%>
+
+
+    
+</ul>
+    
+
+
+
+<
+        
+    
+
+<%- include('./partials/footer.ejs') %>
+<section style="padding-top: 30px; padding-bottom: 50px;" class="text-decoration-none home-text clearfix bg-dark">
+    <div class="cont py-5 px-5 mt-5">
+        <div class="row">
+            <div class="col-lg-3 col-sm-3 px-4">
+                <div class="footer-widget">
+                    <h3 class="text-uppercase  text-white">About Us</h3>
+                    <p class="text-white mt-3">
+                        HireHub is a leading job portal platform that brings a lot of benefits to both job providers and job finders!
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-3 px-4">
+                <div class="footer-widget">
+                    <h3 class="text-uppercase text-white">Contact Info</h3>
+                    <p class="text-white mt-3">Address :HireHub Main Office, New Delhi, India</p>
+                    <p class="text-white mt-3">Phone : +91 9999888877</p>
+                    <p class=" text-white mt-3">Email : info@hirehub.com</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-3 px-4">
+                <div class="footer-widget social-widget">
+                    <h3 class="text-uppercase  text-white mb-3">Important Links</h3>
+                    <ul style="list-style-type: none; padding: 0; margin: 0;">
+                        <li><a class="footer-link fs-6 lead text-decoration-none home-text" href="#"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+                        <li class="mt-2"><a class="footer-link fs-6 lead text-decoration-none home-text" href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li class="mt-2"><a class="footer-link fs-6 lead text-decoration-none home-text" href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li class="mt-2"><a class="footer-link fs-6 lead text-decoration-none home-text" href="#"><i class="fab fa-youtube"></i> youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-3 px-4">
+                <div class="footer-widget news-letter">
+                    <h3 class="text-uppercase text-white">Job Portal</h3>
+                    <p class="footer-text text-white mt-3">View job listings from world's leading recruitment companies</p>
+                    <form action="/jobs" method="GET">
+                        <input type="text" class="footer-text form-control mb-3" placeholder="Job/Company Name">
+                        <button type="submit" class="btn btn-danger">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

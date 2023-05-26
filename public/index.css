@@ -1,0 +1,188 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+img {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+body{ 
+  background-color: rgb(251, 249, 247);
+  
+  }
+  
+  .nav-link{
+    font-weight:800;
+    color: #f7eded!important;
+  }
+  .nav-link:hover{
+    color: #c3d7f6!important;
+  }
+
+  h1{
+    font-family: 'Courier Prime', monospace;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+  }
+
+  .btn{
+    background-color: #151992f3;
+    transition: all 0.5s ease-in-out 0s;
+    margin:auto;
+  }
+  
+  .btn:hover{
+    background-color: rgb(147, 99, 237);
+  }
+  
+  
+  .row{
+    width: 100%;
+    height: 30em;
+    display: inline-flex;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .card-container{
+    width: 25em;
+    height:33em;
+    background-color: rgb(161, 161, 201);
+    border-radius: 20px;
+    
+    box-shadow:
+    0 6.6px 2.5px rgba(0, 0, 0, 0.059),
+    0 15.7px 5.9px rgba(0, 0, 0, 0.085),
+    0 28px 11.1px rgba(0, 0, 0, 0.105),
+    0 44.9px 19.9px rgba(0, 0, 0, 0.125),
+    0 70.3px 37.2px rgba(0, 0, 0, 0.151),
+    0 138px 89px rgba(0, 0, 0, 0.21);
+    border:1.5px solid rgb(108, 108, 184);
+    padding: 0;
+  }
+  
+  .card-body{
+    width: 25em;
+    height: 15em;
+    margin: 0;
+    transition: transform 0.8s ease-in-out;
+    transform-style: preserve-3d;
+  }
+
+
+  
+}
+  
+.imageChange:hover{
+  transform: scale(1.1);
+  transition: transform 0.8s ease-in-out;
+}
+
+.row{
+  width: 100%;
+  height: 30em;
+  display: inline-flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.card-container{
+  width: 15em;
+  height:20em;
+  background-color: rgb(180, 201, 161);
+  border-radius: 15px;
+  box-shadow:
+  0 6.6px 2.5px rgba(0, 0, 0, 0.059),
+  0 15.7px 5.9px rgba(0, 0, 0, 0.085),
+  0 28px 11.1px rgba(0, 0, 0, 0.105),
+  0 44.9px 19.9px rgba(0, 0, 0, 0.125),
+  0 70.3px 37.2px rgba(0, 0, 0, 0.151),
+  0 138px 89px rgba(0, 0, 0, 0.21);
+  border:1.5px solid rgb(108, 108, 184);
+  padding: 0;
+}
+
+.card-body{
+  width: 10em;
+  height: 5em;
+  margin: 0;
+  transition: transform 0.8s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.img-fluid{
+  
+  width:200%;
+  height: 5em;
+}
+.imageChange{
+  /* height:50%; */
+  width: 100%;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 1s ease;
+  
+}
+.card-body figure{
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  border-radius: 10px;
+  margin:0!important;
+  margin-top:1em!important;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+
+.card-body{
+  margin: 0!important;
+}
+
+.card-container{
+  margin: 5;
+  overflow:hidden;
+}
+
+
+.btn-primary{
+
+  
+}
+.cont{
+  font-family: 'Black And White Picture', sans-serif;
+}
+
+
+.find{
+  width:100vw;
+  height:100vh;
+   
+  position:relative;
+
+  
+  background-image:url('images/job.jpg');
+  background-size: cover;
+}
+.title{
+  font-family: 'Courier Prime', monospace;
+  font-weight: 800;
+  text-align: center;
+  position: relative;
+  color:#151992f3;
+  
+}
+
+.pera2{
+  font-family: 'Courier Prime', monospace;
+  font-weight: 800;
+  text-align: center;
+  position: relative;
+  color:darkblue;
+}
